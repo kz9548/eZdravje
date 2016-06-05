@@ -175,7 +175,7 @@ function preberiMeritveVitalnihZnakov() {
 	    	headers: {"Ehr-Session": sessionId},
 	    	success: function (data) {
 				var party = data.party;
-				$("#rezultatMeritveVitalnihZnakov").html("<br/><span>Pridobivanje podatkov o <b>telesni teži</b> pacienta <b>'" + party.firstNames + " " + party.lastNames + "'</b>.</span><br/><br/>");
+				$("#rezultatMeritveVitalnihZnakov").html("<br/><span>Pridobivanje podatkov o teži pacienta <b>'" + party.firstNames + " " + party.lastNames + "'</b>.</span><br/><br/>");
 
 
 					$.ajax({
@@ -201,6 +201,7 @@ function preberiMeritveVitalnihZnakov() {
 							console.log(JSON.parse(err.responseText).userMessage);
 					    }
 					});					
+					
 					
 	    	},
 	    	error: function(err) {

@@ -40,20 +40,20 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <p class="lead"><strong>TO-DO</strong>: Na tem mestu implementirajte vašo aplikacijo.</p>
+      	
         <div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-lg-8 col-md-8 col-sm-8"><b>Kreiraj EHR zapis</b> za novega pacienta</div>
-							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="preberiPredlogoBolnika"><option value=""></option><option value="Peter,Kos,2008-10-01T02:29">Peter Kos</option><option value="Nika,Novak,2004-03-07T12:11">Nika Novak</option><option value="Tina,Kranjc,2009-11-12T04:40">Tina Kranjc</option></select></div>
+							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="preberiPredlogoBolnika"><option value=""></option><option value="Jože,Franko,1964-01-05">Jože Franko</option><option value="Mateja,Jurečič,1984-08-11">Mateja Jurečič</option><option value="Albina,Riosa, 1994-02-01">Albina Riosa</option></select></div>
 						</div>
 					</div>
 					<div class="panel-body">
-						<span class="label label-default">Ime</span><input id="kreirajIme" type="text" class="form-control input-mini" placeholder="Osama">
-						<span class="label label-default">Priimek</span><input id="kreirajPriimek" type="text" class="form-control" placeholder="Bin Laden">
-						<span class="label label-default">Datum rojstva</span><input id="kreirajDatumRojstva" type="text" class="form-control" placeholder="1957-03-10T09:08">
+						<span class="label label-default">Ime</span><input id="kreirajIme" type="text" class="form-control input-mini" placeholder="Ana">
+						<span class="label label-default">Priimek</span><input id="kreirajPriimek" type="text" class="form-control" placeholder="Novak">
+						<span class="label label-default">Datum rojstva</span><input id="kreirajDatumRojstva" type="text" class="form-control" placeholder="1980-10-15">
 						<button type="button" class="btn btn-primary btn-xs" onclick="kreirajEHRzaBolnika()">Dodaj osnovne podatke o bolniku</button><span id="kreirajSporocilo"></span>
 				  	</div>
 				</div>
@@ -62,8 +62,8 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6"><b>Pregled</b> podatkov o <b>telesni teži</b> pacienta</div>
-							<div class="col-lg-3 col-md-3 col-sm-3"><select class="form-control input-sm" id="preberiEhrIdZaVitalneZnake"><option value=""></option><option value="860e0773-c406-4c41-b6fe-84455ea09cd5">Peter Kos</option><option value="f62d212d-ffdd-43d2-b913-87f736f0ed16">Nika Novak</option><option value="a5c96eac-3c5e-4b22-b166-facb0491fd54">Tina Kranjc</option></select></div>
+							<div class="col-lg-6 col-md-6 col-sm-6">Kontrola spremembe telesne teže pacienta</div>
+							<div class="col-lg-3 col-md-3 col-sm-3"><select class="form-control input-sm" id="preberiEhrIdZaVitalneZnake"><option value=""></option><option value="123f9730-f877-4a43-8305-52d380cf58ae">Jože Franko</option><option value="34601fee-af7d-445c-beb4-0e8ae45b21c2">Mateja Jurečič</option><option value="13bd7b6d-c518-4cdb-90cc-964584da07ce">Albina Riosa</option></select></div>
 						</div>
 					</div>				
 					<div class="panel-body">
@@ -80,14 +80,14 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-lg-8 col-md-8 col-sm-8"><b>Vnos</b> meritve <b>vitalnih znakov</b> pacienta</div>
-							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="preberiObstojeciVitalniZnak"><option value=""><option value="860e0773-c406-4c41-b6fe-84455ea09cd5|2014-12-21T11:40Z|45|23.0">Peter Kos</option><option value="f62d212d-ffdd-43d2-b913-87f736f0ed16|2014-12-21T11:40Z|54|35.0">Nika Novak</option><option value="a5c96eac-3c5e-4b22-b166-facb0491fd54|2014-12-21T11:40Z|42|20.0">Tina Kranjc</option></select></div>
+							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="preberiObstojeciVitalniZnak"><option value=""><option value="123f9730-f877-4a43-8305-52d380cf58ae||">Jože Franko</option><option value="34601fee-af7d-445c-beb4-0e8ae45b21c2||">Mateja Jurečič</option><option value="13bd7b6d-c518-4cdb-90cc-964584da07ce||">Albina Riosa</option></select></div>
 						</div>
 					</div>				
 					<div class="panel-body">
-						<span class="label label-default">EHR ID</span><input id="dodajVitalnoEHR" type="text" class="form-control input-mini" placeholder="7b661e12-3a98-21ad-c29e-2dc9f5a3d885">
-						<span class="label label-default">Datum in ura</span><input id="dodajVitalnoDatumInUra" type="text" class="form-control input-mini" placeholder="2014-11-21T11:40Z">
-						<span class="label label-default">Telesna višina</span><div class="input-group"><input id="dodajVitalnoTelesnaVisina" type="text" class="form-control input-mini" placeholder="185"><span class="input-group-addon">cm</span></div>
-						<span class="label label-default">Telesna teža</span><div class="input-group"><input id="dodajVitalnoTelesnaTeza" type="text" class="form-control input-mini" placeholder="80.00"><span class="input-group-addon">kg</span></div>
+						<span class="label label-default">EHR ID</span><input id="dodajVitalnoEHR" type="text" class="form-control input-mini" placeholder="13bd7b6d-c518-4cdb-90cc-964584da07ce">
+						<span class="label label-default">Datum in ura</span><input id="dodajVitalnoDatumInUra" type="text" class="form-control input-mini" placeholder="2016-06-01 11:40">
+						<span class="label label-default">Telesna višina</span><div class="input-group"><input id="dodajVitalnoTelesnaVisina" type="text" class="form-control input-mini" placeholder="175"><span class="input-group-addon">cm</span></div>
+						<span class="label label-default">Telesna teža</span><div class="input-group"><input id="dodajVitalnoTelesnaTeza" type="text" class="form-control input-mini" placeholder="70"><span class="input-group-addon">kg</span></div>
 						<button type="button" class="btn btn-primary btn-xs" onclick="dodajMeritveVitalnihZnakov()">Dodaj meritve vitalnih znakov</button><span id="dodajMeritveVitalnihZnakovSporocilo"></span>
 				  	</div>
 				</div>
